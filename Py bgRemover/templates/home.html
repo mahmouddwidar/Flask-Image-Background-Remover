@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+<!doctype html>
+<html lang="en">
+<head>
+    {% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>{% block title %}Result{% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+    {% block navbar %}
+    {{ super() }} 
+    {% endblock %}
+
+    {% block content %}
+    <div id="content" class="container mb-5">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col-sm-6 m-auto">
+                        <div class='regform bg-primary mt-3'>
+                            <h1>Remove Background</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="row card-body">
+                        <div class="col">
+                            <p class="text-primary fs-4 card-title">Load image</p>
+                        </div>
+                    </div>
+                    <div class="row m-2 mb-4">
+                        <div class="col">
+                            <div class="card p-4 border-0 bg-light rounded-4">
+                                <h3 class="card-title">Drag and drop file here</h3>
+                                <h5 class="card-text fs-6 text-secondary pt-2 ">Limit 10Mb per file</h5>
+                                <h5 class="card-text fs-6 text-secondary pb-3">The format should be PNG, JPG, JPEG or WebP</h5>
+                                <form action="/remback" method="POST" enctype="multipart/form-data" class="needs-validation">
+                                    <input type="file" name="file" class="form-control" required>
+                                    <button type="submit" class="btn btn-success mt-3">Remove Background</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% if rembg_img_name %}
+                    <div class="row">
+                        <div class="col text-center rounded-4 bg-light bg-gradient m-5">
+                            <h2 class="text-danger mt-4">Image with Background Removed</h2>
+                            <img class="mw-100 d-block m-auto" src='../static/uploads/{{ rembg_img_name }}'>
+                            <a href="/download" class="btn btn-primary mt-3 mb-4">Download</a>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block footer %}
+    {{ super() }}
+    {% endblock %}
+    
+    {% block scripts %}
+    {{ super() }}
+    {% endblock %}
+</body>
+
+</html>

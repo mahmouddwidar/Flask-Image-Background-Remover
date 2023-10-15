@@ -1,0 +1,28 @@
+body {
+    font-family: sans-serif;
+}
+
+#content a[href="/download"] {
+    width: 50% !important;
+}
+@media (min-width: 992px) {
+    #content a[href="/download"] {
+        width: 25% !important;
+    }
+}
+
+.regform {
+    margin: auto;
+    color: #FFFFFF;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    border-radius: 15px 15px 0px 0px;
+
+}
+
+img {
+    max-height: 400px;
+    max-width: 500px;
+    height: auto;
+    width: auto;
+}
