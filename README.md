@@ -38,7 +38,7 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/mahmouddwidar/your-repo.git
    
 2. Install the required dependencies:
    ```sh
