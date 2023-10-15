@@ -1,6 +1,6 @@
 # Flask Image Background Removal
 
-![Project Image](./static/imgs/remove1.jpg)
+![Project Image](https://github.com/mahmouddwidar/Flask-Image-Background-Remover/blob/main/Py%20bgRemover/static/imgs/remove1.jpg)
 
 > A web application built with Flask and Python for removing image backgrounds and making them transparent. This tool provides a user-friendly interface for effortlessly removing backgrounds from images, enhancing their usability in various contexts.
 
