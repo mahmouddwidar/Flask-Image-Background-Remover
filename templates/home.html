@@ -9,7 +9,11 @@
     {% endblock %}
 </head>
 <body>
-    {% block navbar %}
+    <div class="preloader">
+        <div id="loader"></div>
+    </div>
+    <div class="main">
+        {% block navbar %}
     {{ super() }} 
     {% endblock %}
 
@@ -43,7 +47,7 @@
                                 <h5 class="card-text fs-6 text-secondary pb-3">The format should be PNG, JPG, JPEG or WebP</h5>
                                 <form action="/remback" method="POST" enctype="multipart/form-data" class="needs-validation">
                                     <input type="file" name="file" class="form-control" required>
-                                    <button type="submit" class="btn btn-success mt-3">Remove Background</button>
+                                    <button type="submit" class="btn btn-success mt-3" id="rmSubmit">Remove Background</button>
                                 </form>
                             </div>
                         </div>
@@ -68,6 +72,7 @@
     {{ super() }}
     {% endblock %}
     
+    </div>
     {% block scripts %}
     {{ super() }}
     {% endblock %}

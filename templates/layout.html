@@ -15,7 +15,11 @@
     {% endblock %}
 </head>
 <body>
-    {% block navbar %}
+    <div class="preloader">
+        <div id="loader"></div>
+    </div>
+    <div class="main">
+        {% block navbar %}
     <!-- Start Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
         <div class="container">
@@ -50,9 +54,9 @@
                 <h1 class="text-center fw-bold pb-lg-3">
                     Remove Background From Image for Free Using Artificial Intelligence
                 </h1>
-                <form action="/remback" method="POST" enctype="multipart/form-data" class="d-flex flex-wrap justify-content-center align-items-center p-3 mt-3">
+                <form action="/remback" autocomplete="on" method="POST" enctype="multipart/form-data" class="d-flex flex-wrap justify-content-center align-items-center p-3 mt-3">
                     <input type="file" name="file" id="file" class="form-control" required>
-                    <div class="w-100 text-center mt-3 mb-3"><button type="submit" class="btn text-white rounded-pill">Reomove Background</button></div>
+                    <div class="w-100 text-center mt-3 mb-3"><button type="submit" class="btn text-white rounded-pill" id="rmSubmit">Reomove Background</button></div>
                     <h6 class="card-text fs-6 text-secondary pb-3">The format should be PNG, JPG, JPEG or WebP</h6>
                 </form>
             </div>
@@ -113,6 +117,8 @@
     {% block scripts %}
     <script src="{{ url_for('static', filename='js/bootstrap.bundle.js') }}"></script>
     <script src="{{ url_for('static', filename='js/all.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% endblock %}
+    </div>
 </body>
 </html>
